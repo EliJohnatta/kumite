@@ -1,0 +1,41 @@
+body {
+    background-color: #E0FFFF;
+}
+
+.container {
+    margin-top: 5%;
+    background-color: white;
+}
+
+img {
+    width: 175px;
+    height: 175px;
+    margin: 10px;
+}
+
+.padronizarEspacamento {
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.placar {
+    text-align: center;
+    font-size: 60px;
+}
+
+.corAka {
+    color: red;
+}
+
+.grupoBotoes {
+    font-size: 20px;
+}
+
+.padronizarEspacamentoBotoes {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.ajusteMargem {
+    margin-top: 15px;
+}
