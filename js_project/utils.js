@@ -85,38 +85,34 @@ function monitorarJogai(jogai, jogaiPosterior, senshu) {
 function verificarVencedor() {
     if(placarShiro >= pontuacao) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por PONTUAÇÃO!";
-        document.getElementById("radioSenshuVencedorShiro").checked = true;
         travarElementos()
     }
     else if(placarAka >= pontuacao) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por PONTUAÇÃO!";
-        document.getElementById("radioSenshuVencedorAka").checked = true;
         travarElementos()
     }
     else if(placarAdvertenciaShiro == 4) {
-        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de ADVERTÊNCIA por parte de SHIRO!";
-        document.getElementById("radioSenshuVencedorAka").checked = true;
+        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de ADVERTÊNCIA!";
         travarElementos()
     }
     else if(placarAdvertenciaAka == 4) {
-        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de ADVERTÊNCIA por parte de AKA!";
-        document.getElementById("radioSenshuVencedorShiro").checked = true;
+        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de ADVERTÊNCIA!";
         travarElementos()
     }
     else if(placarJogaiShiro == 4) {
-        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de JOGAI por parte de SHIRO!";
-        document.getElementById("radioSenshuVencedorAka").checked = true;
+        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de JOGAI!";
         travarElementos()
     }
     else if(placarJogaiAka == 4) {
-        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de JOGAI por parte de AKA!";
-        document.getElementById("radioSenshuVencedorShiro").checked = true;
+        document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de JOGAI!";
         travarElementos()
     }
 }
 
 function travarElementos() {
     //BOTÕES
+    document.getElementById("chkboxSenshuShiro").disabled = true
+    document.getElementById("chkboxSenshuAka").disabled = true
     document.getElementById("addIpponShiro").disabled = true;
     document.getElementById("rmIpponShiro").disabled = true;
     document.getElementById("addNihonShiro").disabled = true;
@@ -129,7 +125,7 @@ function travarElementos() {
     document.getElementById("rmNihonAka").disabled = true;
     document.getElementById("addSambonAka").disabled = true;
     document.getElementById("rmSambonAka").disabled = true;
-    //INPUTS
+    //CAMPOS
     document.getElementById("checkboxAdvertenciaShiroCK").disabled = true;
     document.getElementById("checkboxAdvertenciaShiroKK").disabled = true;
     document.getElementById("checkboxAdvertenciaShiroHC").disabled = true;

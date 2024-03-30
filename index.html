@@ -20,9 +20,8 @@
                 <img src="img/ctkb.png" class="rounded">
             </div>
             <div class="col-6">
-                <p class="lead">CONFEDERAÇÃO TRADICIONAL DE KARATÊ E LUTAS ASSOCIADAS DO BRASIL</p>
-                <p class="lead">FEDERAÇÃO ESTADUAL DE KARATÊ E KOMBATE DO RN</p>
-                <p class="lead">KUMITE</p>
+                <p class="h6 tamanhoFonteCabecalho">CONFEDERAÇÃO TRADICIONAL DE KARATÊ E LUTAS ASSOCIADAS DO BRASIL</p>
+                <p class="h6 tamanhoFonteCabecalho">FEDERAÇÃO ESTADUAL DE KARATÊ E KOMBATE DO RN</p>
             </div>
             <div class="col-3">
                 <img src="img/fekrn.png" class="rounded">
@@ -32,24 +31,24 @@
             <div class="col">
                 <div class="padronizarEspacamento">
                     <span>SENSHU</span>
-                    <input class="form-check-input" type="radio" name="radioSenshuVencedorShiro" id="radioSenshuVencedorShiro" disabled>
+                    <input class="form-check-input" type="checkbox" name="chkboxSenshuShiro" id="chkboxSenshuShiro">
                 </div>
                 <div class="padronizarEspacamento">
                     <input type="text" class="form-control form-control-lg placar" id="placarShiro" value="0" readonly>
-                    <label class="form-label display-6">SHIRO</label>
+                    <label class="form-label display-5">SHIRO</label>
                 </div>
             </div>
             <div class="col-6">
-                <p class="lead" id="exibirResultadoCombate"></p>
+                <p class="display-3" id="exibirResultadoCombate"></p>
             </div>
             <div class="col">
                 <div class="padronizarEspacamento">
                     <span>SENSHU</span>
-                    <input class="form-check-input" type="radio" name="radioSenshuVencedorAka" id="radioSenshuVencedorAka" disabled>
+                    <input class="form-check-input" type="checkbox" name="chkboxSenshuAka" id="chkboxSenshuAka">
                 </div>
                 <div class="padronizarEspacamento">
                     <input type="text" class="form-control form-control-lg placar corAka" id="placarAka" value="0" readonly>
-                    <label class="form-label display-6 corAka">AKA</label>
+                    <label class="form-label display-5 corAka">AKA</label>
                 </div>
             </div>
         </div>
@@ -78,7 +77,7 @@
                 </div>
             </div>
             <div class="col-6">
-                <p class="display-5">
+                <p class="display-1">
                     <span id="minuto">00</span>:<span id="segundo">00</span>
                 </p>
                 <button type="button" class="btn btn-primary" id="btnIniciar" onclick="iniciar()">Iniciar</button>
@@ -239,7 +238,7 @@
                     <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHS" disabled onchange="monitorarJogai(
                         this,
                         null,
-                        'S'
+                        'A'
                     )">
                 </div>
                 <div class="form-check form-check-inline">
@@ -247,7 +246,7 @@
                     <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHC" disabled onchange="monitorarJogai(
                         this,
                         document.getElementById('checkboxJogaiAkaHS'),
-                        'S'
+                        'A'
                     )">
                 </div>
                 <div class="form-check form-check-inline">
@@ -255,7 +254,7 @@
                     <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaKK"disabled onchange="monitorarJogai(
                         this,
                         document.getElementById('checkboxJogaiAkaHC'),
-                        'S'
+                        'A'
                     )">
                 </div>
                 <div class="form-check form-check-inline">
@@ -263,7 +262,7 @@
                     <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaCK" onchange="monitorarJogai(
                         this,
                         document.getElementById('checkboxJogaiAkaKK'),
-                        'S'
+                        'A'
                     )">
                 </div>
             </div>

@@ -19,6 +19,8 @@ function resetar() {
   milissegundo = 0;
   document.getElementById('minuto').innerText = '00';
   document.getElementById('segundo').innerText = '00';
+
+  pausar();
 }
 
 function timer() {

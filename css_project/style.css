@@ -20,7 +20,7 @@ img {
 
 .placar {
     text-align: center;
-    font-size: 60px;
+    font-size: 120px;
 }
 
 .corAka {
@@ -38,4 +38,8 @@ img {
 
 .ajusteMargem {
     margin-top: 15px;
+}
+
+.tamanhoFonteCabecalho {
+    font-size: 14.50px;
 }
