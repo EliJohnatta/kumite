@@ -43,3 +43,8 @@ img {
 .tamanhoFonteCabecalho {
     font-size: 14.50px;
 }
+
+input[type="checkbox"] {
+    border-color: #4B0082;
+    border-width: 2.75px;
+}

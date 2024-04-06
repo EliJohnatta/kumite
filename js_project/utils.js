@@ -9,10 +9,10 @@ function monitorarAdvertencia(advertencia, advertenciaAnterior, advertenciaPoste
         if(senshu == "S") {
             placarAdvertenciaShiro += 1;
             if(advertenciaPosterior != null) {
+                advertenciaPosterior.disabled = false;
                 if(placarAdvertenciaShiro > 1) {
                     adicionarValorDoPlacar(placar, valor, false);
                 }
-                advertenciaPosterior.disabled = false;
             }
             else {
                 verificarVencedor();
@@ -21,10 +21,10 @@ function monitorarAdvertencia(advertencia, advertenciaAnterior, advertenciaPoste
         else {
             placarAdvertenciaAka += 1;
             if(advertenciaPosterior != null) {
+                advertenciaPosterior.disabled = false;
                 if(placarAdvertenciaAka > 1) {
                     adicionarValorDoPlacar(placar, valor, true);
                 }
-                advertenciaPosterior.disabled = false;
             }
             else {
                 verificarVencedor();
