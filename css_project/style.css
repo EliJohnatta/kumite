@@ -1,15 +1,16 @@
 body {
-    background-color: #E0FFFF;
-}
-
-.container {
-    margin-top: 5%;
-    background-color: white;
+    background: linear-gradient(
+        to right,
+        white 0%,
+        white 50%,
+        #cb4335 50%,
+        #cb4335 100%
+    );
 }
 
 img {
-    width: 175px;
-    height: 175px;
+    width: 75px;
+    height: 75px;
     margin: 10px;
 }
 
@@ -20,15 +21,26 @@ img {
 
 .placar {
     text-align: center;
-    font-size: 120px;
+    font-size: 400px;
+    border: none;
+}
+
+.cronometro {
+    text-align: center;
+    font-size: 170px;
 }
 
 .corAka {
-    color: red;
+    color: white;
 }
 
-.grupoBotoes {
-    font-size: 20px;
+.corFundoAka {
+    background: #cb4335;
+}
+
+.fontePontuacoes {
+    font-size: 27px;
+    font-weight: bold;
 }
 
 .padronizarEspacamentoBotoes {
@@ -41,10 +53,16 @@ img {
 }
 
 .tamanhoFonteCabecalho {
-    font-size: 14.50px;
+    font-size: 12px;
 }
 
 input[type="checkbox"] {
-    border-color: #4B0082;
+    border-color: black;
     border-width: 2.75px;
+    width: 25px;
+    height: 32px;
+}
+
+#placarAka, #sistemaPontuacao {
+    background-color: #cb4335;
 }

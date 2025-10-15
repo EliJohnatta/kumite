@@ -33,18 +33,26 @@ function monitorarAdvertencia(advertencia, advertenciaAnterior, advertenciaPoste
     }
     else {
         if(senshu == "S") {
-            if(advertenciaAnterior != null && placarAdvertenciaShiro > 1) {
+            if(advertenciaAnterior != null && placarAdvertenciaShiro > 1 && placarAdvertenciaShiro < 4) {
                 retirarValorDoPlacar(placar, valor, false);
             }
-            advertenciaPosterior.disabled = true;
+
+            if (advertenciaPosterior != null) {
+                advertenciaPosterior.disabled = true;
+            }
             placarAdvertenciaShiro -= 1;
+            verificarVencedor();
         }
         else {
-            if(advertenciaAnterior != null && placarAdvertenciaAka > 1) {
+            if(advertenciaAnterior != null && placarAdvertenciaAka > 1 && placarAdvertenciaAka < 4) {
                 retirarValorDoPlacar(placar, valor, true);
             }
-            advertenciaPosterior.disabled = true;
+
+            if (advertenciaPosterior != null) {
+                advertenciaPosterior.disabled = true;
+            }
             placarAdvertenciaAka -= 1;
+            verificarVencedor();
         }
     }
 }
@@ -72,12 +80,18 @@ function monitorarJogai(jogai, jogaiPosterior, senshu) {
     }
     else {
         if(senshu == "S") {
-            jogaiPosterior.disabled = true;
+            if(jogaiPosterior != null) {
+                jogaiPosterior.disabled = true;
+            }
             placarJogaiShiro -= 1;
+            verificarVencedor();
         }
         else {
-            jogaiPosterior.disabled = true;
+            if(jogaiPosterior != null) {
+                jogaiPosterior.disabled = true;
+            }
             placarJogaiAka -= 1;
+            verificarVencedor();
         }
     }
 }
@@ -85,30 +99,28 @@ function monitorarJogai(jogai, jogaiPosterior, senshu) {
 function verificarVencedor() {
     if(placarShiro >= pontuacao) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por PONTUAÇÃO!";
-        travarElementos()
     }
     else if(placarAka >= pontuacao) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por PONTUAÇÃO!";
-        travarElementos()
     }
     else if(placarAdvertenciaShiro == 4) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de ADVERTÊNCIA!";
-        travarElementos()
     }
     else if(placarAdvertenciaAka == 4) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de ADVERTÊNCIA!";
-        travarElementos()
     }
     else if(placarJogaiShiro == 4) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de AKA por excesso de JOGAI!";
-        travarElementos()
     }
     else if(placarJogaiAka == 4) {
         document.getElementById("exibirResultadoCombate").innerHTML = "Vitória de SHIRO por excesso de JOGAI!";
-        travarElementos()
+    }
+    else {
+        document.getElementById("exibirResultadoCombate").innerHTML = "";
     }
 }
 
+/*
 function travarElementos() {
     //BOTÕES
     document.getElementById("chkboxSenshuShiro").disabled = true
@@ -144,6 +156,7 @@ function travarElementos() {
     document.getElementById("checkboxJogaiAkaCK").disabled = true;
     document.getElementById("sistemaPontuacao").disabled = true;
 }
+*/
 
 function adicionarValorDoPlacar(placar, valor, flag) {
     if(flag) {
@@ -162,10 +175,12 @@ function retirarValorDoPlacar(placar, valor, flag) {
     if(flag) {
         placarShiro = Number.parseInt(placar.value) - valor;
         placar.value = placarShiro;
+        verificarVencedor();
     }
     else {
         placarAka = Number.parseInt(placar.value) - valor;
         placar.value = placarAka;
+        verificarVencedor();
     }
 }
 

@@ -14,264 +14,259 @@
     <script src="js_project/utils.js"></script>
     <script src="js_project/logicaCronometro.js"></script>
 
-    <div class="container text-center rounded">
+    <div class="text-center rounded">
         <div class="row align-items-center padronizarEspacamento">
-            <div class="col-3">
-                <img src="img/ctkb.png" class="rounded">
-            </div>
-            <div class="col-6">
-                <p class="h6 tamanhoFonteCabecalho">CONFEDERAÇÃO TRADICIONAL DE KARATÊ E LUTAS ASSOCIADAS DO BRASIL</p>
-                <p class="h6 tamanhoFonteCabecalho">FEDERAÇÃO ESTADUAL DE KARATÊ E KOMBATE DO RN</p>
-            </div>
-            <div class="col-3">
-                <img src="img/fekrn.png" class="rounded">
-            </div>
-        </div>
-        <div class="row align-items-center padronizarEspacamento">
-            <div class="col">
+            <div class="col-4">
                 <div class="padronizarEspacamento">
-                    <span>SENSHU</span>
+                    <span class="fontePontuacoes">SENSHU</span>
                     <input class="form-check-input" type="checkbox" name="chkboxSenshuShiro" id="chkboxSenshuShiro">
                 </div>
                 <div class="padronizarEspacamento">
                     <input type="text" class="form-control form-control-lg placar" id="placarShiro" value="0" readonly>
-                    <label class="form-label display-5">SHIRO</label>
+                    <label class="form-label display-4"><b>SHIRO</b></label>
                 </div>
             </div>
-            <div class="col-6">
-                <p class="display-3" id="exibirResultadoCombate"></p>
+            <div class="col-4">
+                <div>
+                    <p class="fs-1" id="exibirResultadoCombate"></p>
+                </div>
+                <div>
+                    <p class="cronometro">
+                        <span id="minuto">00</span>:<span id="segundo">00</span>
+                    </p>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary btn-lg" id="btnIniciar" onclick="iniciar()">Iniciar</button>
+                        <button type="button" class="btn btn-warning btn-lg" id="btnPausar" onclick="pausar()">Pausar</button>
+                        <button type="button" class="btn btn-dark btn-lg" id="btnResetar" onclick="resetar()">Resetar</button>
+                    </div>
+                </div>
             </div>
-            <div class="col">
+            <div class="col-4 corFundoAka">
                 <div class="padronizarEspacamento">
-                    <span>SENSHU</span>
+                    <span class="corAka fontePontuacoes">SENSHU</span>
                     <input class="form-check-input" type="checkbox" name="chkboxSenshuAka" id="chkboxSenshuAka">
                 </div>
                 <div class="padronizarEspacamento">
                     <input type="text" class="form-control form-control-lg placar corAka" id="placarAka" value="0" readonly>
-                    <label class="form-label display-5 corAka">AKA</label>
+                    <label class="form-label display-4 corAka"><b>AKA</b></label>
                 </div>
             </div>
         </div>
         <div class="row align-items-center padronizarEspacamento">
             <div class="col text-end">
                 <div class="padronizarEspacamentoBotoes">
-                    <span>IPPON</span>
+                    <span class="fontePontuacoes">IPPON</span>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="addIpponShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 1, true)">-</button>
-                        <button type="button" class="btn btn-success grupoBotoes" id="rmIpponShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 1, true)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="addIpponShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 1, true)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="rmIpponShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 1, true)">+</button>
                     </div>
                 </div>
                 <div class="padronizarEspacamentoBotoes">
-                    <span>NIHON</span>
+                    <span class="fontePontuacoes">NIHON</span>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="addNihonShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 2, true)">-</button>
-                        <button type="button" class="btn btn-success grupoBotoes" id="rmNihonShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 2, true)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="addNihonShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 2, true)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="rmNihonShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 2, true)">+</button>
                     </div>
                 </div>
                 <div class="padronizarEspacamentoBotoes">
-                    <span>SAMBON</span>
+                    <span class="fontePontuacoes">SAMBON</span>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="addSambonShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 3, true)">-</button>
-                        <button type="button" class="btn btn-success grupoBotoes" id="rmSambonShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 3, true)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="addSambonShiro" onclick="retirarValorDoPlacar(document.getElementById('placarShiro'), 3, true)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="rmSambonShiro" onclick="adicionarValorDoPlacar(document.getElementById('placarShiro'), 3, true)">+</button>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <p class="display-1">
-                    <span id="minuto">00</span>:<span id="segundo">00</span>
-                </p>
-                <button type="button" class="btn btn-primary" id="btnIniciar" onclick="iniciar()">Iniciar</button>
-                <button type="button" class="btn btn-warning" id="btnPausar" onclick="pausar()">Pausar</button>
-                <button type="button" class="btn btn-danger" id="btnResetar" onclick="resetar()">Resetar</button>
+            <div class="col-8">
+                <div class="row align-items-center padronizarEspacamento">
+                    <div class="col-1 text-end fontePontuacoes"><span><b>ADV</b></span></div>
+                    <div class="col-5 text-start">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxAdvertenciaShiroCK"><b>CK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroCK" onchange="monitorarAdvertencia(
+                                this,
+                                null,
+                                document.getElementById('checkboxAdvertenciaShiroKK'),
+                                'S'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxAdvertenciaShiroKK"><b>KK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroKK" disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaShiroCK'),
+                                document.getElementById('checkboxAdvertenciaShiroHC'),
+                                'S',
+                                document.getElementById('placarAka'),
+                                1
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxAdvertenciaShiroHC"><b>HC</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroHC" disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaShiroKK'),
+                                document.getElementById('checkboxAdvertenciaShiroHS'),
+                                'S',
+                                document.getElementById('placarAka'),
+                                2
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxAdvertenciaShiroHS"><b>HS</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroHS" disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaShiroHC'),
+                                null,
+                                'S'
+                            )">
+                        </div>
+                    </div>
+                    <div class="col-5 text-end">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxAdvertenciaAkaHS"><b>HS</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaHS"  disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaAkaHC'),
+                                null,
+                                'A'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxAdvertenciaAkaHC"><b>HC</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaHC"  disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaAkaKK'),
+                                document.getElementById('checkboxAdvertenciaAkaHS'),
+                                'A',
+                                document.getElementById('placarShiro'),
+                                2
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxAdvertenciaAkaKK"><b>KK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaKK" disabled onchange="monitorarAdvertencia(
+                                this,
+                                document.getElementById('checkboxAdvertenciaAkaCK'),
+                                document.getElementById('checkboxAdvertenciaAkaHC'),
+                                'A',
+                                document.getElementById('placarShiro'),
+                                1
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxAdvertenciaAkaCK"><b>CK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaCK"  onchange="monitorarAdvertencia(
+                                this,
+                                null,
+                                document.getElementById('checkboxAdvertenciaAkaKK'),
+                                'A'
+                            )">
+                        </div>
+                    </div>
+                    <div class="col-1 text-start fontePontuacoes corAka"><span><b>ADV</b></span></div>
+                </div>
+                <div class="row align-items-center padronizarEspacamento">
+                    <div class="col-1 text-end fontePontuacoes"><span><b>JOG</b></span></div>
+                    <div class="col-5 text-start">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxJogaiShiroCK"><b>CK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroCK" onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiShiroKK'),
+                                'S'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxJogaiShiroKK"><b>KK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroKK" disabled onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiShiroHC'),
+                                'S'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxJogaiShiroHC"><b>HC</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroHC" disabled onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiShiroHS'),
+                                'S'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes" for="checkboxJogaiShiroHS"><b>HS</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroHS" disabled onchange="monitorarJogai(
+                                this,
+                                null,
+                                'S'
+                            )">
+                        </div>
+                    </div>
+                    <div class="col-5 text-end">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxJogaiAkaHS"><b>HS</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHS" disabled onchange="monitorarJogai(
+                                this,
+                                null,
+                                'A'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxJogaiAkaHC"><b>HC</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHC" disabled onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiAkaHS'),
+                                'A'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxJogaiAkaKK"><b>KK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaKK"disabled onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiAkaHC'),
+                                'A'
+                            )">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label fontePontuacoes corAka" for="checkboxJogaiAkaCK"><b>CK</b></label>
+                            <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaCK" onchange="monitorarJogai(
+                                this,
+                                document.getElementById('checkboxJogaiAkaKK'),
+                                'A'
+                            )">
+                        </div>
+                    </div>
+                    <div class="col-1 text-start fontePontuacoes corAka"><span><b>JOG</b></span></div>
+                </div>
             </div>
             <div class="col text-start">
                 <div class="padronizarEspacamentoBotoes">
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-success grupoBotoes" id="addIpponAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 1, false)">+</button>
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="rmIpponAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 1, false)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="addIpponAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 1, false)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="rmIpponAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 1, false)">-</button>
                     </div>
-                    <span>IPPON</span>
+                    <span class="fontePontuacoes corAka">IPPON</span>
                 </div>
                 <div class="padronizarEspacamentoBotoes">
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-success grupoBotoes" id="addNihonAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 2, false)">+</button>
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="rmNihonAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 2, false)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="addNihonAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 2, false)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="rmNihonAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 2, false)">-</button>
                     </div>
-                    <span>NIHON</span>
+                    <span class="fontePontuacoes corAka">NIHON</span>
                 </div>
                 <div class="padronizarEspacamentoBotoes">
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-success grupoBotoes" id="addSambonAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 3, false)">+</button>
-                        <button type="button" class="btn btn-secondary grupoBotoes" id="rmSambonAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 3, false)">-</button>
+                        <button type="button" class="btn btn-success fontePontuacoes" id="addSambonAka" onclick="adicionarValorDoPlacar(document.getElementById('placarAka'), 3, false)">+</button>
+                        <button type="button" class="btn btn-secondary fontePontuacoes" id="rmSambonAka" onclick="retirarValorDoPlacar(document.getElementById('placarAka'), 3, false)">-</button>
                     </div>
-                    <span>SAMBON</span>
+                    <span class="fontePontuacoes corAka">SAMBON</span>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center padronizarEspacamento">
-            <div class="col-2 text-end"><span>ADVERTÊNCIA</span></div>
-            <div class="col-4 text-start">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaShiroCK">CK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroCK" onchange="monitorarAdvertencia(
-                        this,
-                        null,
-                        document.getElementById('checkboxAdvertenciaShiroKK'),
-                        'S'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaShiroKK">KK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroKK" disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaShiroCK'),
-                        document.getElementById('checkboxAdvertenciaShiroHC'),
-                        'S',
-                        document.getElementById('placarAka'),
-                        1
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaShiroHC">HC</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroHC" disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaShiroKK'),
-                        document.getElementById('checkboxAdvertenciaShiroHS'),
-                        'S',
-                        document.getElementById('placarAka'),
-                        2
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaShiroHS">HS</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaShiroHS" disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaShiroHC'),
-                        null,
-                        'S'
-                    )">
-                </div>
-            </div>
-            <div class="col-4 text-end">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaAkaHS">HS</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaHS"  disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaAkaHC'),
-                        null,
-                        'A'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaAkaHC">HC</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaHC"  disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaAkaKK'),
-                        document.getElementById('checkboxAdvertenciaAkaHS'),
-                        'A',
-                        document.getElementById('placarShiro'),
-                        2
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaAkaKK">KK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaKK" disabled onchange="monitorarAdvertencia(
-                        this,
-                        document.getElementById('checkboxAdvertenciaAkaCK'),
-                        document.getElementById('checkboxAdvertenciaAkaHC'),
-                        'A',
-                        document.getElementById('placarShiro'),
-                        1
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxAdvertenciaAkaCK">CK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxAdvertenciaAkaCK"  onchange="monitorarAdvertencia(
-                        this,
-                        null,
-                        document.getElementById('checkboxAdvertenciaAkaKK'),
-                        'A'
-                    )">
-                </div>
-            </div>
-            <div class="col-2 text-start"><span>ADVERTÊNCIA</span></div>
-        </div>
-        <div class="row align-items-center padronizarEspacamento">
-            <div class="col-2 text-end"><span>JOGAI</span></div>
-            <div class="col-4 text-start">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiShiroCK">CK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroCK" onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiShiroKK'),
-                        'S'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiShiroKK">KK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroKK" disabled onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiShiroHC'),
-                        'S'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiShiroHC">HC</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroHC" disabled onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiShiroHS'),
-                        'S'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiShiroHS">HS</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiShiroHS" disabled onchange="monitorarJogai(
-                        this,
-                        null,
-                        'S'
-                    )">
-                </div>
-            </div>
-            <div class="col-4 text-end">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiAkaHS">HS</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHS" disabled onchange="monitorarJogai(
-                        this,
-                        null,
-                        'A'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiAkaHC">HC</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaHC" disabled onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiAkaHS'),
-                        'A'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiAkaKK">KK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaKK"disabled onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiAkaHC'),
-                        'A'
-                    )">
-                </div>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="checkboxJogaiAkaCK">CK</label>
-                    <input class="form-check-input" type="checkbox" id="checkboxJogaiAkaCK" onchange="monitorarJogai(
-                        this,
-                        document.getElementById('checkboxJogaiAkaKK'),
-                        'A'
-                    )">
-                </div>
-            </div>
-            <div class="col-2 text-start"><span>JOGAI</span></div>
-        </div>
+        
         <div class="row align-items-center justify-content-center padronizarEspacamento">
-            <div class="col-4 text-end ajusteMargem"><p class="lead">ESCOLHA DE SISTEMA DE PONTUAÇÃO</p></div>
-            <div class="col-4 text-start">
-                <select class="form-select form-select-lg" id="sistemaPontuacao" onchange="setPontuacao(this.value)">
+            <div class="col-6 text-end ajusteMargem"><p class="lead fontePontuacoes">ESCOLHA DE SISTEMA DE PONTUAÇÃO</p></div>
+            <div class="col-6 text-start">
+                <select class="form-select form-select-lg corAka" id="sistemaPontuacao" onchange="setPontuacao(this.value)">
                     <option value="4" selected>QUATRO PONTOS</option>
                     <option value="6">SEIS PONTOS</option>
                 </select>
@@ -279,7 +274,7 @@
         </div>
         <div class="row justify-content-end padronizarEspacamento">
             <div class="col-auto">
-                <button type="button" class="btn btn-dark" onclick="limparDados()">LIMPAR DADOS</button>
+                <button type="button" class="btn btn-dark btn-lg" onclick="limparDados()">LIMPAR DADOS</button>
             </div>
         </div>
     </div>
